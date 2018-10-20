@@ -2,11 +2,13 @@
 
 $servername = 'den1.mssql3.gear.host';
 $username = 'candev';
-$password = 'Qu0R?ilq8-E7';
+$password = 'wecandevelop123!';
+$dbName = 'candev';
+$connectionInfo = array("Database" => $dbName, "UID" => $username, "PWD" => $password);
 
-$link = mssql_connect($servername, $username, $password);
+$conn = sqlsrv_connect($servername, $connectionInfo);
 
-if($link){
+if($conn){
 	die("Connection failed");
 }
 else {
