@@ -9,10 +9,9 @@ $connectionInfo = array("Database" => $dbName, "UID" => $username, "PWD" => $pas
 $conn = sqlsrv_connect($servername, $connectionInfo);
 
 if($conn){
-	die("Connection failed");
-}
-else {
 	echo "<h1>Connected Successfully!!!</h1>";
 }
-
+else {
+	echo "Connection Failed :(((";
+}
 ?>
