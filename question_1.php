@@ -34,15 +34,13 @@
         <li>Is declared by the Parliament of Canada to be for the general advantage of Canada or for the advantage of     two or more provinces (i.e. Uranium mining and Atomic energy; Feed, Flour and Seed Mills; Grain               Elevators)</li>
         <li>Falls outside the exclusive legislative authority of the legislature of the provinces (i.e.: Airports,        Aircraft or a line of air transportation; First Nations where the Band Council is involved; Chartered         Banks; Postal Services).</li>
       </ul>
-      <?php echo '<input id="employer" type="hidden" val="'.$_GET("employer").'" />'; ?>
-      
-	  
 	  <form action="#">
         <button id="YES" type="button">YES</button>
         <button id="NO" type="button">NO</button>
       </form>
     </section>
   </div>
+  <?php echo '<input id="employer" type="hidden" val="'.$_GET["employer"].'" />'; ?>
 </body>
 
 <script
