@@ -2,12 +2,12 @@
 
 $credentials = include('config.php');
  
-$conn = sqlsrv_connect('den1.mssql3.gear.host', $credentials);
+$conn = sqlsrv_connect('tcp:candev.database.windows.net,1433', $credentials);
 
 if($conn){
 	$query = $_GET["q"];
 	
-	$query = "SELECT TOP 10 * FROM dbo.Company WHERE Company_Name LIKE '%" . $query . "%'";
+	$query = "SELECT TOP 10 * FROM dbo.Organ_Fed_Jurisdiction WHERE Organization_EN LIKE '%" . $query . "%'";
 	$result = sqlsrv_query($conn, $query);
 	
 	if($result == false){
