@@ -4,5 +4,4 @@
 		"PWD" => 'weed420!',
 		"UID" => 'candev@candev',
 	)
-
 ?>

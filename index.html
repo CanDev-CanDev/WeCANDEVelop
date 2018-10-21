@@ -51,10 +51,19 @@
 				dataType: 'json',
 				success: function(data){
 					if(data.success == "true"){
-						$("#container1").after(data.federal);
+            //redirect to next page
+            if(data.federal = "yes"){
+              window.location.href = "federal_response_1.html";
+            }
+            else if(data.federal = "maybe"){
+              window.location.href = "federal_response_1.html";
+            } 
+            else {
+              window.location.href = "question_1.php?employer=" + val;
+            }
 					}
 					else {
-						$("#container1").after("serverProblem");
+						//some sort of error on the server that will be handled later
 					}
 				}
 			})
