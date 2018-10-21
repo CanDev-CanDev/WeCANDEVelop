@@ -112,7 +112,7 @@ ul {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   font-size: 20px;
   color: aliceblue;
