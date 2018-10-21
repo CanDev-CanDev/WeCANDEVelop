@@ -25,6 +25,7 @@ body {
 
 .head {
   display: inline-flex;
+  justify-content: space-between;
   width: 70%;
   margin-left: 15%;
   background-color: transparent;
@@ -32,21 +33,19 @@ body {
   margin-bottom: 1em;
 }
 
-
-
 .head h1 {
   margin-top: 1em;
 }
 
 .img_1 {
   height: 100px;
-  margin-left: 25%;
+  /* margin-left: 25%; */
   margin-top: 5px;
 }
 
 .img_2 {
   height: 70px;
-  margin-left: 36%;
+  /* margin-left: 36%; */
 }
 
 .page_1 {
@@ -72,6 +71,7 @@ body {
 .container h1 {
   font-family: 'Source Serif Pro', serif;
   font-size: 50px;
+  text-align: center;
 }
 
 .container p {
@@ -88,13 +88,13 @@ body {
   width: 70%;
   padding: 0.5em;
   font-size: 25px;
-  margin-left: 15%;
+  margin-left: 13.5%;
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: 10px;
 }
 
 .page_1 form button {
-  width: 73%;
+  width: 70%;
   font-family: 'source Sans Pro', sans-serif;
   font-size: 25px;
   margin-top: 1em;
@@ -108,7 +108,7 @@ body {
 footer {
   position: absolute;
   bottom: 0px;
-  font-size: 25px;
+  font-size: 20px;
   color: aliceblue;
   background-color: black;
   width: 100%;
@@ -118,4 +118,71 @@ footer {
 footer p {
   float: right;
   margin-right: 15%;
+}
+
+@media(max-width: 900px) {
+  .black_band img {
+    margin-left: 5%;
+  }
+
+  .head {
+    display: inline-flex;
+    width: 90%;
+    margin-left: 5%;
+    background-color: transparent;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .container {
+    width: 90%;
+    margin-left: 5%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(194, 194, 194);
+    background-color: rgb(238, 238, 238);
+    border-top-width: 50px;
+    border-top-color: #1a568c;
+    border-radius: 5px;
+  }
+
+  .page_1 {
+    display: block;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  .img_1 {
+    height: 75px;
+  }
+  
+  .img_2 {
+    height: 50px;
+  }
+
+  .page_1 h1 {
+    font-size: 30px;
+  }
+
+  .page_1 form button {
+    justify-content: center;
+    width: 70%;
+    margin-left: 15%;
+    font-size: 20px;
+  }
+
+  .page_1 form input {
+    width: 70%;
+    font-size: 20px;
+  }
+
+  .page_1 p {
+    font-size: 20px;
+  }
+
+  footer {
+    font-size: 15px;
+  }
 }
