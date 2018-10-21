@@ -22,15 +22,15 @@
 </header>
 
 <body>
-  <div class="container">
+  <div id="container1" class="container">
     <section class="page_1 head">
       <h1>Welcome to the Jurisdiction Finder</h1>
       <p>Please type in your employer's name. Make sure it is the company's registered legal name.
         If you do not have your employer's name, type in it's registered business number if applicable.
       </p>
       <form action="checkcompany.php" target="_self" method="GET">
-        <input type="text" name="employer"><br>
-        <button type="button" id="submit">SUBMIT</button>
+        <input id="employerName" type="text" name="employer"><br>
+        <button type="button" id="submitButton">SUBMIT</button>
       </form>
     </section>
   </div>
@@ -41,6 +41,27 @@
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
 
+<script>
+	$(function(){
+		$("#submitButton").click(function(){
+			var val = $("#employerName").val();
+			$.ajax({
+				method:'GET',
+				url: 'checkcompany.php?employer=' + val,
+				dataType: 'json',
+				success: function(data){
+					if(data.success == "true"){
+						$("#container1").after(data.federal);
+					}
+					else {
+						$("#container1").after("serverProblem");
+					}
+				}
+			})
+		})
+	});
+
+</script>
 <footer>
   <div>
     <p><b>Canada.ca</b></p>
