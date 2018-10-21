@@ -10,6 +10,7 @@ if($conn){
 	$query = "SELECT * FROM dbo.Company WHERE Company_Name = '$employer'";
 	$result = sqlsrv_query($conn, $query);
 	if($result == false){
+		die( print_r( sqlsrv_errors(), true));
 		echo '{"success":"false"}';
 	}
 	else {
@@ -26,6 +27,7 @@ if($conn){
 	}
 }
 else {
+	die( print_r( sqlsrv_errors(), true));
 	echo '{"success":"false"}';
 }
 ?>

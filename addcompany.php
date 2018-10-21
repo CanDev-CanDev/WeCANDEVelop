@@ -12,12 +12,14 @@ if($conn){
 	$result = sqlsrv_query($conn, $query);
 	if($result == false){
 		echo '{"success":"false"}';
+		die( print_r( sqlsrv_errors(), true));
 	}
 	else {
 		echo '{"success":"true"}';
 	}
 }
 else {
+	die( print_r( sqlsrv_errors(), true));
 	echo '{"success":"false"}';
 }
 ?>

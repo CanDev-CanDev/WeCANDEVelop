@@ -12,6 +12,7 @@ if($conn){
 	
 	if($result == false){
 		echo '[]';
+		die( print_r( sqlsrv_errors(), true));
 		return;
 	}
 	
@@ -22,6 +23,7 @@ if($conn){
 	echo json_encode($arr);
 }
 else {
+	die( print_r( sqlsrv_errors(), true));
 	echo '[]';
 }
 ?>
