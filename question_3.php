@@ -36,17 +36,40 @@
         <li>Certain individual undertakings like Hudson Bay Mining and Smelting Company</li>
       </ul>
       <form action="#">
-        <button type="button">YES</button>
-        <button type="button">NO</button>
+        <button id="YES" type="button">YES</button>
+        <button id="NO" type="button">NO</button>
       </form>
     </section>
   </div>
+  <?php echo '<input id="employer" type="hidden" val="'.$_GET["employer"].'" />'; ?>
 </body>
 
 <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
+  <script>
+  $(function(){
+    $("#YES").click(function(){
+      var employer = $("#employer").val();
+      $.ajax({
+        method:'POST',
+        url:'addcompany.php',
+        data:{"employer":employer},
+        dataType: 'json',
+        async:false,
+        success: function(data){
+          window.location.href = "federal_response_1.html";
+        }
+      })
+    })
+
+    $("#NO").click(function(){
+      var employer = $("#employer").val()
+      window.location.href= "question_4.php?employer=" + employer;  
+    })
+  })
+</script>
 
 <footer>
   <div>
