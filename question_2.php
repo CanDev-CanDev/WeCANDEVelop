@@ -39,6 +39,8 @@
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
   <script>
+  var employerName = $("#employer").val();
+  
   $(function(){
     $("#YES").click(function(){
       var employer = $("#employer").val();
@@ -53,9 +55,11 @@
         }
       })
     })
+    
+    console.log(employerName);
 
     $("#NO").click(function(){
-      var employer = $("#employer").val()
+      var employer = $("#employer").val();
       window.location.href= "question_3.php?employer=" + employer;  
     })
   })
