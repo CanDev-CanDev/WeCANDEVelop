@@ -71,7 +71,7 @@ body {
 .container p {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 25px;
-  line-height: 1.2em;
+  line-height: 1.em;
   padding-bottom: 0;
 }
 
@@ -112,7 +112,7 @@ ul {
 }
 
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   font-size: 20px;
   color: aliceblue;
@@ -176,7 +176,7 @@ footer p {
     justify-content: center;
     width: 70%;
     margin-left: 15%;
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .page_1 form input {
