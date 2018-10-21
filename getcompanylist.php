@@ -18,7 +18,7 @@ if($conn){
 	
 	$arr = array();
 	while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
-		array_push($arr, $row["Company"]);
+		array_push($arr, $row["Company_Name"]);
 	}
 	echo json_encode($arr);
 }
