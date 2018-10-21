@@ -19,6 +19,13 @@
     <img src="./img/maple leaf.png" alt="maple" class="img_1">
     <img src="./img/government_logo.png" alt="government_logo" class="img_2">
   </div>
+  <style>
+    #suggestions{
+      position: absolute;
+      top: 100%;
+      left:0px;
+    }
+  </style>
 </header>
 
 <body>
@@ -29,7 +36,10 @@
         If you do not have your employer's name, type in it's registered business number if applicable.
       </p>
       <form action="checkcompany.php" target="_self" method="GET">
-        <input id="employerName" type="text" name="employer"><br>
+        <input id="employerName" type="text" name="employer">
+        <ul id="suggestions" hidden>
+        </ul>
+        <br>
         <button type="button" id="submitButton">SUBMIT</button>
       </form>
     </section>
@@ -68,6 +78,28 @@
 				}
 			})
 		})
+
+    $("#employerName").keyup(function(){
+      var curr = $("#employerName").val();
+      $.ajax({
+        method:'GET',
+        url: 'getcompanylist.php?q=' + curr,
+        dataType: 'json',
+        success: function(data){
+          if(data.length > 0){
+            $("#suggestions").html("");
+            $.each(data, function(i, val){
+              $("#suggestions").append('<li class="clickable-suggestion">' + data[i] + '</li>');
+            })
+            $("#suggestions").show();
+          }
+          else{
+            $("#suggestions").html("");
+            $("#suggestions").hide();
+          }
+        }
+      })
+    })
 	});
 
 </script>
