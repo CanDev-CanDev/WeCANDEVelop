@@ -2,7 +2,7 @@
 
 $credentials = include('config.php');
 
-$conn = sqlsrv_connect($credentials["SERVER"], $credentials);
+$conn = sqlsrv_connect('den1.mssql3.gear.host', $credentials);
 
 if($conn){
 	$employer = $_GET["employer"];
