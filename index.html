@@ -19,6 +19,13 @@
     <img src="./img/maple leaf.png" alt="maple" class="img_1">
     <img src="./img/government_logo.png" alt="government_logo" class="img_2">
   </div>
+  <style>
+    #suggestions{
+      position: absolute;
+      top: 100%;
+      left:0px;
+    }
+  </style>
 </header>
 
 <body>
@@ -29,13 +36,76 @@
         If you do not have your employer's name, type in it's registered business number if applicable.
       </p>
       <form action="checkcompany.php" target="_self" method="GET">
-        <input id="employerName" type="text" name="employer"><br>
+        <input id="employerName" type="text" name="employer">
+        <ul id="suggestions" hidden>
+        </ul>
+        <br>
         <button type="button" id="submitButton">SUBMIT</button>
       </form>
     </section>
   </div>
 </body>
 
+<<<<<<< HEAD
+=======
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+<script>
+	$(function(){
+		$("#submitButton").click(function(){
+			var val = $("#employerName").val();
+			$.ajax({
+				method:'GET',
+				url: 'checkcompany.php?employer=' + val,
+				dataType: 'json',
+				success: function(data){
+					if(data.success == "true"){
+            //redirect to next page
+            if(data.federal == "yes"){
+              window.location.href = "federal_response_1.html";
+            }
+            else if(data.federal == "maybe"){
+              window.location.href = "federal_response_1.html";
+            } 
+            else {
+              window.location.href = "question_1.php?employer=" + val;
+            }
+					}
+					else {
+						//some sort of error on the server that will be handled later
+					}
+				}
+			})
+		})
+
+    $("#employerName").keyup(function(){
+      var curr = $("#employerName").val();
+      $.ajax({
+        method:'GET',
+        url: 'getcompanylist.php?q=' + curr,
+        dataType: 'json',
+        success: function(data){
+          if(data.length > 0){
+            $("#suggestions").html("");
+            $.each(data, function(i, val){
+              $("#suggestions").append('<li class="clickable-suggestion">' + data[i] + '</li>');
+            })
+            $("#suggestions").show();
+          }
+          else{
+            $("#suggestions").html("");
+            $("#suggestions").hide();
+          }
+        }
+      })
+    })
+	});
+
+</script>
+>>>>>>> 27df71b40321d5b499357910d2c4482c46d65d11
 <footer>
   <div>
     <p><b>Canada.ca</b></p>
