@@ -8,7 +8,7 @@ if($conn){
 	$employer = $_POST["employer"];
 	$approval = ($_POST["needsApproval"] == "true")?0:1;
 
-	$query = "INSERT INTO dbo.Company (Organization_EN, Verified_Federal_Flag) VALUES('".$employer."', 0)";
+	$query = "INSERT INTO dbo.Organ_Fed_Jurisdiction (Organization_EN, Verified_Federal_Flag) VALUES('".$employer."', 0)";
 	$result = sqlsrv_query($conn, $query);
 	if($result == false){
 		echo '{"success":"false"}';
