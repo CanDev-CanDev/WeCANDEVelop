@@ -16,10 +16,15 @@ if($conn){
 	else {
 		$arr = array();
 		while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
-			array_push($arr, $row["Company"]);
+			array_push($arr, $row["Approved"]);
 		}
 		if(count($arr) > 0){
-			echo '{"success":"true", "federal":"true"}';
+			if($arr[0] == "true"){
+				echo '{"success":"true", "federal":"true"}';
+			}
+			else {
+				echo '{"success":"true", "federal":"false"}';
+			}
 		}
 		else {
 			echo '{"success":"true", "federal":"false"}';

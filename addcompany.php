@@ -2,13 +2,13 @@
 
 $credentials = include('config.php');
 
-$conn = sqlsrv_connect('den1.mssql3.gear.host', $credentials);
+$conn = sqlsrv_connect('tcp:candev.database.windows.net,1433', $credentials);
 
 if($conn){
 	$employer = $_POST["employer"];
-	$approval = ($_POST["needsApproval"] == "true")?1:0;
+	$approval = ($_POST["needsApproval"] == "true")?0:1;
 
-	$query = "INSERT INTO dbo.Company (Company_Name, Federal, Approved) VALUES('".$employer."', 1,".$approval.")";
+	$query = "INSERT INTO dbo.Company (Organization_EN, Verified_Federal_Flag) VALUES('".$employer."', 0)";
 	$result = sqlsrv_query($conn, $query);
 	if($result == false){
 		echo '{"success":"false"}';

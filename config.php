@@ -1,8 +1,8 @@
 <?php
 	return array(
 		"Database" => 'candev',
-		"PWD" => 'wecandevelop123!',
-		"UID" => 'candev',
+		"PWD" => 'weed420!',
+		"UID" => 'candev@candev',
 	)
 
 ?>
