@@ -93,6 +93,11 @@
             $.each(data, function(i, val){
               $("#suggestions").append('<li class="clickable-suggestion">' + data[i] + '</li>');
             })
+            $("li").click(function(){
+              var val = $(this).html();
+              console.log("CLICKED: " + val);
+              $("#employerName").val(val);
+            })
             $("#suggestions").show();
           }
           else{
@@ -101,12 +106,6 @@
           }
         }
       })
-    })
-
-    $("li").click(function(){
-      var val = $(this).html();
-      console.log("CLICKED: " + val);
-      $("#employerName").val(val);
     })
 	});
 
