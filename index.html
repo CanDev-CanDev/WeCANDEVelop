@@ -22,8 +22,8 @@
   <style>
     #suggestions{
       position: absolute;
-      top: 100%;
-      left:0px;
+      background:white;
+      outline:1px solid black;
     }
   </style>
 </header>
@@ -85,6 +85,7 @@
         method:'GET',
         url: 'getcompanylist.php?q=' + curr,
         dataType: 'json',
+        async:'false',
         success: function(data){
           if(data.length > 0){
             $("#suggestions").html("");
@@ -99,6 +100,11 @@
           }
         }
       })
+    })
+
+    $(".clickable-suggestion").click(function(){
+      var val = $(this).html();
+      $("#employerName").val(val);
     })
 	});
 
