@@ -37,6 +37,11 @@ body {
   margin-top: 1em;
 }
 
+a {
+  text-decoration: none;
+  color: gray;
+}
+
 .img_1 {
   height: 100px;
   /* margin-left: 25%; */
@@ -79,35 +84,8 @@ body {
   font-size: 30px;
 }
 
-.page_1 form {
-  margin-top: 4em;
-  padding-bottom: 4em;
-}
-
-.page_1 form input {
-  width: 70%;
-  padding: 0.5em;
-  font-size: 25px;
-  margin-left: 13.5%;
-  font-family: 'Source Sans Pro', sans-serif;
-  border-radius: 10px;
-}
-
-.page_1 form button {
-  width: 70%;
-  font-family: 'source Sans Pro', sans-serif;
-  font-size: 25px;
-  margin-top: 1em;
-  margin-left: 15%;
-  padding: 0.5em;
-  background-color: #1a568c;
-  color: aliceblue;
-  border-radius: 10px;
-}
-
-.page_1 form button:hover {
-  width: 75%;
-  margin-left: 12.5%;
+.container p:nth-child(3) {
+  padding-bottom: 3em;
 }
 
 footer {
@@ -157,6 +135,7 @@ footer p {
 
   header h1 {
     font-size: 20px;
+    color: aliceblue
   }
 
   .img_1 {
@@ -171,20 +150,9 @@ footer p {
     font-size: 30px;
   }
 
-  .page_1 form button {
-    justify-content: center;
-    width: 70%;
-    margin-left: 15%;
-    font-size: 20px;
-  }
-
-  .page_1 form input {
-    width: 70%;
-    font-size: 20px;
-  }
-
   .page_1 p {
     font-size: 20px;
+    padding-bottom: 4em;
   }
 
   footer {
