@@ -31,6 +31,7 @@
       </form>
     </section>
   </div>
+  <?php echo '<input id="employer" type="hidden" value="'.$_GET["employer"].'" />'; ?>
 </body>
 
 <script

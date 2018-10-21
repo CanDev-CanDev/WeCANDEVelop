@@ -31,7 +31,7 @@
       </form>
     </section>
   </div>
-  <?php echo '<input id="employer" type="hidden" val="'.$_GET["employer"].'" />'; ?>
+  <?php echo '<input id="employer" type="hidden" value="'.$_GET["employer"].'" />'; ?>
 </body>
 
 <script
@@ -40,7 +40,7 @@
   crossorigin="anonymous"></script>
   <script>
   var employerName = $("#employer").val();
-  
+
   $(function(){
     $("#YES").click(function(){
       var employer = $("#employer").val();

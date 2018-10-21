@@ -40,7 +40,7 @@
       </form>
     </section>
   </div>
-  <?php echo '<input id="employer" type="hidden" val="'.$_GET["employer"].'" />'; ?>
+  <?php echo '<input id="employer" type="hidden" value="'.$_GET["employer"].'" />'; ?>
 </body>
 
 <script
@@ -65,7 +65,7 @@
     })
 
     $("#NO").click(function(){
-      var employer = $("#employer").val()
+      var employer = $("#employer").val();
       window.location.href= "question_2.php?employer=" + employer;  
     })
   })
