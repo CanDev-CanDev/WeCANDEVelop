@@ -103,8 +103,9 @@
       })
     })
 
-    $(".clickable-suggestion").click(function(){
+    $(li).click(function(){
       var val = $(this).html();
+      console.log("CLICKED: " + val);
       $("#employerName").val(val);
     })
 	});
