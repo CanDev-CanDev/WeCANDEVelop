@@ -125,6 +125,11 @@ footer p {
   margin-right: 15%;
 }
 
+ul {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 0;
+}
+
 @media(max-width: 900px) {
   .black_band img {
     margin-left: 5%;
